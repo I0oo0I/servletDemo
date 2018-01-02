@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.kxy</groupId>
+  <artifactId>servletDemo</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>servletDemo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<jdk.version>1.8</jdk.version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  		<scope>test</scope>
+  	</dependency>
+    
+    <!-- servlet -->
+	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- 没有jsp-api ${pageContext.request.contextPath}会报错 -->
+	<!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jsp-api</artifactId>
+	    <version>2.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- log4j -->
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>1.2.14</version>
+  	</dependency>
+    
+  </dependencies>
+  <build>
+    <finalName>servletDemo</finalName>
+    <pluginManagement>
+    	<plugins>
+    		<plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-compiler-plugin</artifactId>
+		      <configuration>
+		        <source>${jdk.version}</source>
+		        <target>${jdk.version}</target>
+		      </configuration>
+		    </plugin>
+    	</plugins>
+    </pluginManagement>
+  </build>
+</project>
