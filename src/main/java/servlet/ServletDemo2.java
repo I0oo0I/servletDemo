@@ -31,16 +31,6 @@ public class ServletDemo2 extends HttpServlet{
 	}
 	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String method = req.getMethod();
-		if(method.equalsIgnoreCase("get")) {
-			doGet(req, resp);
-		}else if(method.equalsIgnoreCase("post")) {
-			doPost(req, resp);
-		}
-	}
-	
-	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(req.getHeader("Accept-Language"));	// zh-CN,zh;q=0.8
 		System.out.println(req.getRequestURI());				// /servletDemo/hi

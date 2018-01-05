@@ -54,8 +54,8 @@ public class TradeServlet extends HttpServlet{
 		try {
 			conn = DriverManager.getConnection(url, user, password);
 			conn.setAutoCommit(false); //关闭自动提交
-			//开启事务，这个是禁止脏读和重复读取
-			conn.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
+			//开启事务
+			conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("select price, amount from bookinfo where id = '3'");

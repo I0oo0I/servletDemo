@@ -80,6 +80,15 @@
     </servlet-mapping>
     
     <servlet>
+    	<servlet-name>dbServlet2</servlet-name>
+    	<servlet-class>servlet.jdbc.DBServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>dbServlet2</servlet-name>
+    	<url-pattern>/db2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
     	<servlet-name>tradeServlet</servlet-name>
     	<servlet-class>servlet.jdbc.TradeServlet</servlet-class>
     	<init-param>
@@ -88,7 +97,7 @@
     	</init-param>
     	<init-param>
     		<param-name>url</param-name>
-    		<param-value>jdbc:mysql://localhost:3306/bookstore?useSSL=false</param-value>
+    		<param-value>jdbc:mysql://localhost:3306/bookstore?useSSL=false&amp;serverTimezone=UTC</param-value>
     	</init-param>
     	<init-param>
     		<param-name>user</param-name>
