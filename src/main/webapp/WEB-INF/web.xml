@@ -112,4 +112,62 @@
     	<servlet-name>tradeServlet</servlet-name>
     	<url-pattern>/buyBook</url-pattern>
     </servlet-mapping>
+    
+    <!-- sessionLogin -->
+    <servlet>
+    	<servlet-name>sessionLogin</servlet-name>
+    	<servlet-class>servlet.session.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>sessionLogin</servlet-name>
+    	<url-pattern>/sessionLogin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>greet</servlet-name>
+    	<servlet-class>servlet.session.GreetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>greet</servlet-name>
+    	<url-pattern>/greet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>loginChk</servlet-name>
+    	<servlet-class>servlet.session.LoginChkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>loginChk</servlet-name>
+    	<url-pattern>/loginchk</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>sessionLogout</servlet-name>
+    	<servlet-class>servlet.session.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>sessionLogout</servlet-name>
+    	<url-pattern>/sessionLogout</url-pattern>
+    </servlet-mapping>
+    <!-- sesionlogin结束 -->
+    
+    <!-- cookieLogin -->
+     <servlet>
+    	<servlet-name>cookieLogin</servlet-name>
+    	<servlet-class>servlet.cookie.CookieLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>cookieLogin</servlet-name>
+    	<url-pattern>/cookieLogin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>cookieGreet</servlet-name>
+    	<servlet-class>servlet.cookie.CookieGreetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>cookieGreet</servlet-name>
+    	<url-pattern>/cookieGreet</url-pattern>
+    </servlet-mapping>
+    <!-- cookieLogin结束 -->
 </web-app>  
