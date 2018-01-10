@@ -32,11 +32,13 @@ public class User implements HttpSessionBindingListener{
 	
 	@Override
 	public void valueBound(HttpSessionBindingEvent event) {
+		System.out.println(this.name + "触发session绑定事件");
 		ul.addUser(name);
 	}
 
 	@Override
 	public void valueUnbound(HttpSessionBindingEvent event) {
+		System.out.println(this.name + "触发session移除事件");
 		ul.removeUser(name);
 	}
 	

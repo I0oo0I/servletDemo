@@ -18,7 +18,7 @@ public class LogoutServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.setContentType("text/html;charset=gb2312");
+		resp.setContentType("text/html;charset=utf-8");
 		
 		HttpSession session = req.getSession();
 		User user = (User)session.getAttribute("user");

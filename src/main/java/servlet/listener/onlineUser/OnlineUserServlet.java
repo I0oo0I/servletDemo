@@ -25,7 +25,7 @@ public class OnlineUserServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("gb2312");
+		req.setCharacterEncoding("utf-8");
 		String name = req.getParameter("user");
 		String password = req.getParameter("password");
 		
@@ -39,7 +39,7 @@ public class OnlineUserServlet extends HttpServlet{
 				session.setAttribute("user", user);
 			}
 			
-			resp.setContentType("text/html;charset=gb2312");
+			resp.setContentType("text/html;charset=utf-8");
 			PrintWriter out = resp.getWriter();
 			
 			out.println("欢迎用户<b>" + name + "</b>");
@@ -48,10 +48,10 @@ public class OnlineUserServlet extends HttpServlet{
 			Enumeration<String> enums = ul.getUserList();
 			int i = 0;
 			while (enums.hasMoreElements()) {
-				out.println(enums.nextElement());
-				out.println("&nbsp;&nbsp;&nbsp;&nbsp;");
+				out.print(enums.nextElement());
+				out.print("&nbsp;&nbsp;&nbsp;&nbsp;");
 				if(++i==10) {
-					out.println("<br>");
+					out.print("<br>");
 				}
 			}
 			out.println("<br>当前在线人数：" + i);
