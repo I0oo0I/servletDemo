@@ -1,5 +1,9 @@
 package common;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
 public class StringUtils {
 
 	/**
@@ -47,5 +51,26 @@ public class StringUtils {
 			return sb.toString();
 		}
 		return null;
+	}
+	
+	/**
+	 * 替换content的内容，例如不雅文字
+	 * @param content
+	 * @param hm
+	 * @return
+	 */
+	public static String replaceText(String content, HashMap<String, String> hm) {
+		StringBuffer sb = new StringBuffer(content);
+		Set<String> keys = hm.keySet();
+		Iterator<String> it = keys.iterator();
+		while(it.hasNext()) {
+			String key = (String) it.next();
+			int index = sb.indexOf(key);
+			while(-1 != index) {
+				sb.replace(index, index+key.length(), (String) hm.get(key));
+				index = sb.indexOf(key);	//可能有多个需要替换
+			}
+		}
+		return sb.toString();
 	}
 }

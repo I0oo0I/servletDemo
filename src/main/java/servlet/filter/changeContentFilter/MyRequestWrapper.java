@@ -25,6 +25,7 @@ public class MyRequestWrapper extends HttpServletRequestWrapper{
 	
 	/**
 	 * 重写getParameter方法，对请求的值进行过滤。
+	 * 这个是在serve调用request.getParameter时触发
 	 */
 	@Override
 	public String getParameter(String name) {
