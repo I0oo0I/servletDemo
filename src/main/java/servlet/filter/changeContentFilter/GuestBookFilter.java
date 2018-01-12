@@ -62,7 +62,7 @@ public class GuestBookFilter implements Filter{
 		
 		String content = new String(respWrapper.toByteArray());
 		String result = StringUtils.replaceText(content, hm);
-		resp.setContentType("text/html;charset=utf-8");
+		resp.setContentType("text/html;charset=gb2312");
 		PrintWriter out = resp.getWriter();
 		out.println(result);
 		out.close();

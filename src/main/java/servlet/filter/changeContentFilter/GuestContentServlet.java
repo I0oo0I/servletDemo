@@ -31,7 +31,6 @@ public class GuestContentServlet extends HttpServlet{
 		DataSource ds = (DataSource)req.getServletContext().getAttribute("dataSource");
 		Connection conn;
 		Statement stmt;
-		resp.setContentType("text/html;charset=utf-8");
 		PrintWriter out = resp.getWriter();
 		out.println("<html><head><title>网上书店留言板</title></head>");
 		out.println("<body><a href=view/say.html>我要留言</a>");
