@@ -292,4 +292,72 @@
     	<filter-name>localeFilter</filter-name>
     	<url-pattern>/form.jsp</url-pattern>
     </filter-mapping>
+    <!-- 结束国际化 -->
+    
+    <!-- Basic 安全验证 ，没有退出登录功能，使用sales登录后，访问jsp页面，都会禁止，因为验证用户的角色还是sales
+    	用户在 tomcat-user.xml中配置的
+    	<tomcat-users>
+			<role rolename="sales" />
+			<role rolename="market"/>
+			
+			<user username="zhangsan" password="1234" roles="sales"></user>
+			<user username="lisi" password="1234" roles="market"></user>
+	    </tomcat-users>
+    -->
+<!--     <security-constraint>
+    	<web-resource-collection>
+    		<web-resource-name>sales area</web-resource-name>
+    		<url-pattern>/home.jsp</url-pattern>
+    	</web-resource-collection>
+    	<auth-constraint>
+    		<role-name>sales</role-name>
+    	</auth-constraint>
+    </security-constraint>
+    
+    <security-constraint>
+    	<web-resource-collection>
+    		<web-resource-name>market area</web-resource-name>
+    		<url-pattern>/login.html</url-pattern>
+    	</web-resource-collection>
+    	<auth-constraint>
+    		<role-name>market</role-name>
+    	</auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+    	<auth-method>BASIC</auth-method>
+    	<auth-method>DIGEST</auth-method>  和 Basic类似，不过用户密码使用了md5加密，Basic没有加密，只是使用了Base64编码
+    	<realm-name>Basic Auth Test</realm-name>
+    </login-config> -->
+    <!-- 结束Basic安全验证 -->
+    
+    <!-- form 表单验证 -->
+    <security-constraint>
+    	<web-resource-collection>
+    		<web-resource-name>protected area</web-resource-name>
+    		<url-pattern>/index.jsp</url-pattern>
+    		<http-method>GET</http-method>
+    	</web-resource-collection>
+    	
+    	<auth-constraint>
+    		<role-name>sales</role-name>
+    	</auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+    	<auth-method>FORM</auth-method>
+    	<form-login-config>
+    		<form-login-page>/securityLogin.html</form-login-page>
+    		<form-error-page>/error.html</form-error-page>
+    	</form-login-config>
+    </login-config>
+    <!-- 结束 form表单验证 -->
+    
+    <security-role>
+    	<role-name>sales</role-name>
+    </security-role>
+    
+    <security-role>
+    	<role-name>market</role-name>
+    </security-role>
 </web-app>  
